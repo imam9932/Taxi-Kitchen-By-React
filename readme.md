@@ -1,9 +1,13 @@
 # <img src="./assets/logo.png" width="30px" /> TAXI KITCHEN BOARD
+
 **Kitchen Order Management System** – A real-time app to track and manage restaurant orders. View current orders, monitor cooking progress, and see ready-to-serve dishes with details like table number, waiter ID, and cooking time for efficient kitchen workflow.
-## Project Overview 
+
+## Project Overview
+
 <img src="https://i.ibb.co.com/zV3w2cch/image.png"/>
 
 ## Technologies Used
+
 - **React** – For building the interactive user interface
 - **JavaScript** – Core language for logic and state management
 - **Tailwind CSS** – Utility-first styling framework for responsive design
@@ -12,7 +16,8 @@
 
 ## Components
 
-### Logo 
+### Logo
+
 ```jsx
 import logo from "../assets/logo.png"; // you should re-import image based on your image location
 const Logo = () => {
@@ -28,11 +33,10 @@ const Logo = () => {
 };
 
 export default Logo;
-
 ```
 
+### Navbar
 
-### Navbar 
 ```jsx
 import Logo from "./Logo"; // import your own component
 const Navbar = () => {
@@ -80,14 +84,14 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
 ```
 
-### Title 
+### Title
+
 ```jsx
 import { ChefHat } from "lucide-react";
 
-const TitleSection = ({children}) => {
+const TitleSection = ({ children }) => {
   return (
     <h2
       className={`bg-[url(/title-bg.png)] flex justify-center items-center gap-1 text-4xl font-bold text-center bg-no-repeat pb-20 pt-10 bg-center`}
@@ -100,13 +104,13 @@ const TitleSection = ({children}) => {
 };
 
 export default TitleSection;
-
 ```
 
-### Card (Counting ) 
+### Card (Counting )
+
 ```jsx
 import React from "react";
- import { ChefHat, CookingPot, ScrollText, TicketCheck } from "lucide-react";
+import { ChefHat, CookingPot, ScrollText, TicketCheck } from "lucide-react";
 
 const CurrentOrdersCard = () => {
   const totalOrders = 12; // static number
@@ -125,17 +129,17 @@ const CurrentOrdersCard = () => {
 };
 
 export default CurrentOrdersCard;
-
 ```
 
-### Card ( Order ) 
+### Card ( Order )
+
 ```jsx
 import { UtensilsCrossed } from "lucide-react";
 
 const OrderCard = () => {
   // Static data (mock order)
   const order = {
-    id:1,
+    id: 1,
     order_no: 101,
     quantity: 2,
     order_title: "Chicken Biryani",
@@ -171,9 +175,10 @@ const OrderCard = () => {
 };
 
 export default OrderCard;
-
 ```
-### Card ( Cooking ) 
+
+### Card ( Cooking )
+
 ```jsx
 const CookingCard = () => {
   // Mock data
@@ -187,7 +192,7 @@ const CookingCard = () => {
     <div
       className="rounded-xl p-5 shadow hover:shadow-lg"
       style={{
-        background: "linear-gradient(#ffffff90, #FCB700), url('/cook-bg.gif')"
+        background: "linear-gradient(#ffffff90, #FCB700), url('/cook-bg.gif')",
       }}
     >
       {/* Title */}
@@ -214,11 +219,10 @@ const CookingCard = () => {
 };
 
 export default CookingCard;
-
-
 ```
 
 ### Card ( Cooking Completed )
+
 ```jsx
 const ServeCard = () => {
   // Static mock data
@@ -255,4 +259,8 @@ const ServeCard = () => {
 };
 
 export default ServeCard;
-```jsx
+```
+
+### License
+
+This project was developed by Ferdous Zihad and is licensed under the MIT License.
