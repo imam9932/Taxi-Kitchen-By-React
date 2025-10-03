@@ -6,7 +6,9 @@ import ReadyCarts from './Cards/ReadyCarts';
 
 
 const OrdersContainer = ({promise}) => {
-const orders=use(promise);
+const data=use(promise);
+const [order,setOrder]=useState(data);
+
 const [cookingItems,setCookingItems]=useState([])
 const [readyItems,setReadyItems]=useState([]);
 const handleCooking=(orders)=>{
@@ -16,6 +18,9 @@ setReadyItems(newReadyItems)
 
 const remaining=cookingItems.filter(item=>item.id!==orders.id);
 setCookingItems(remaining)
+
+const remainingOrders=order.filter(item=> item.id !== orders.id);
+setOrder(remainingOrders);
 
 };
 // console.log(readyItems);
@@ -31,14 +36,14 @@ setCookingItems(newCookingItems)
   };
    return (
     <div>
-      <States ordersTotal={orders.length} cookingTotal={cookingItems.length}
+      <States ordersTotal={order.length} cookingTotal={cookingItems.length}
       readyTotal={readyItems.length}></States>
       <section className='w-11/12 mx-auto py-10 grid lg:grid-cols-12 grid-cols-1 gap-5'>
       <div className='lg:col-span-7'>
  <h2 className='font-bold text-4xl'>Current Orders</h2>
   <div className='space-y-5'>
         {
-        orders.map(items =>
+        order.map(items =>
           <OrderCards orders={items} key={items.id} handleOrders={handleOrders}></OrderCards>
         )
        }
